@@ -1,0 +1,8 @@
+headers = jvmti.h
+excludedFunctions = JNI_OnLoad JNI_OnUnload Agent_OnLoad Agent_OnAttach Agent_OnUnload
+
+---
+
+void setEventNotificationMode(jvmtiEnv *jvmti) {
+    (*jvmti)->SetEventNotificationMode(jvmti, JVMTI_ENABLE, JVMTI_EVENT_VM_INIT, NULL);
+}
